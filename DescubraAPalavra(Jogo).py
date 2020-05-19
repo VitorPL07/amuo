@@ -1,7 +1,9 @@
 from random import choice
 
+# Colocar as palavras em uma lista
 plv = ["carro", "casa", "cachorro", "capacete", "espelho", "porta", "cama", "cadeira", "chinelo", "quadro", "gato", "mesa", "fechadura", "toalha", "televisao", "paralelepipedo", "ventilador", "apaixonado", "desesperado", "varal", "cabide", "colher", "celular", "abajur", "caixa", "escova", "laranja", "sapato", "sabonete", "pente", "janela", "mochila", "mapa", "caminhao", "arroz", "cavalo", "grampeador", "camisa", "escritorio", "caderno", "biblioteca", "discoteca", "perfume", "desodorante", "livro"]
 
+# Colocar uma dica para cada palavra
 dicas = {"carro": "tem na garagem",
 "casa": "tem onde vive pessoas",
 "cachorro": "um animal",
@@ -47,21 +49,23 @@ dicas = {"carro": "tem na garagem",
 "livro": "escola"
 }
 
+# Escolher uma palavra aleatória e esconder
 sortear = choice(plv)
 tentativas = 5
 plv_esc = "_" * len(sortear)
 plv_esc = list(plv_esc)
 
+# Introdução só jogo
 print("-=-" * 12)
 print("JOGO DA FORCA".center(35))
 print("-=-" * 12)
-
 print(f"\nA dica é: \033[1;33m{dicas[sortear]}\033[m")
-
 print(f"\n\033[1;34mVOCÊ TEM \033[1;33m{tentativas}\033[1;34m TENTATIVAS!\033[m\n")
 
+# Lista de letras usadas para não repetir a mesma letra
 letras_usadas = []
 
+# Programa Principal
 while True:
 	print(" ".join(plv_esc))
 	chute = input("\nDigite uma letra: ").lower()
